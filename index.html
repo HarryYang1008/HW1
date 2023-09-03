@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<!--
+    GREEN group MAP-project
+    v 1.0
+    
+    @author CSE416 Green group
+   
+-->
+
+<head>
+    <title>GeoMap</title>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="./src/style.css" />
+
+    
+    <!-- Import the LEAFLET CSS filr here-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+     integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+     crossorigin=""
+    />
+     <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+        integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+        crossorigin=""></script>
+
+
+    
+
+</head>
+
+<body>
+    <!--Heading Banner-->
+    <div id="heading-banner">MAP</div>
+
+    <!--Import the map on to the website with LEAFLET-->
+
+    <div classname="map-container">
+        <div id="map" ></div>
+        <script>
+        	const map = L.map('map').setView([40.915734, 286.87721], 13);
+
+	        const tiles = 
+            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		    maxZoom: 19,
+		    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+	        }).addTo(map);
+
+	        const marker = L.marker([40.915734, 286.87721]).addTo(map);
+
+	        
+        </script>
+    </div>
+
+    <div class="editbar">
+        <input type="file" id="file-input" name="fileContent">
+        <div id="filedrop"> + drop your file here</div>
+        <div id="toolbar">toolbar</div>
+    </div>
+    
+
+
+    <div id="buttom-banner">
+        Group peoject by Green team <br/>
+        Team member: Juyeon Nam/ Seolhee Yun/ Shihao Wen/ Weikang Yang		
+    </div>
+
+    
+
+</body>
+
+</html>
